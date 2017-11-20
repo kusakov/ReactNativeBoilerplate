@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet,
   View
 } from 'react-native';
+import { Provider } from 'react-redux';
+import EStyleSheet from 'react-native-extended-stylesheet';
+import stylesConfig from './configs/styles';
+import RootNavigation from './RootNavigation';
 
-export default class App extends Component<{}> {
+EStyleSheet.build(stylesConfig);
+
+export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-      </View>
+      <RootNavigation />
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-});
+
